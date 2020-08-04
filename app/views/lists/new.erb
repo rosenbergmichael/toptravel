@@ -1,0 +1,9 @@
+<h1>Create a Travel List</h1>
+<p><%= @error %></p>
+<form action="/lists" method="post">
+  <label>Title</label>
+  <input type="text" name="title">
+  <label>Notes</label>
+  <textarea name="notes"></textarea>
+  <button type="submit">Add List</button>
+</form>

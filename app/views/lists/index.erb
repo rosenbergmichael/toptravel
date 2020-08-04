@@ -1,0 +1,6 @@
+<h1>Travel Lists</h1>
+
+<% @lists.each do |list| %>
+    <h2><a href="/lists/<%= list.id %>"><%= list.title %></a></h2>
+    <p><%= list.notes %></p>
+<% end %>    
