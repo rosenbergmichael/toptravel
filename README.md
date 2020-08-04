@@ -1,6 +1,8 @@
-# Title
+# TopTravel
 
-Description...
+Welcome to TopTravel- an app designed to help you keep track of your top travel destinations.  Create as many lists as you'd like whether you want to organize destinations by season, occasion, family, romantic, continent, etc.  
+
+Unfortunately times are tough these days and travel may be restricted for many of us, but hopefully sooner than later we are all able to get out and explore all of the amazing countries and cultures around the world once again.
 
 
 ## Install Instructions
