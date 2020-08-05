@@ -1,0 +1,30 @@
+class UsersController < ApplicationController
+
+  # users can sign up
+  get '/signup' do 
+    erb :'users/signup'
+  end
+
+  post '/signup' do 
+    # users should not be able to create an account with any blank credentials
+    # users should not be able to create an account with a username that already exists
+    user = User.new(params)
+    if user.username.empty? || user.password.empty?
+      @error = "Please fill in both username and password"
+      erb :'users/signup'
+    else 
+      user.save
+      redirect '/lists'
+    end
+  end
+
+  # users can delete account
+
+
+
+
+
+
+
+
+end
