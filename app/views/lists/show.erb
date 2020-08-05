@@ -1,1 +1,6 @@
 <h1><%= @list.title %></h1>
+<h2><%= @list.notes %></h2>
+<form action="/lists/<%= @list.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete List</button>
+</form>

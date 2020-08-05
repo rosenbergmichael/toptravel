@@ -71,7 +71,11 @@ class ListsController < ApplicationController
   # DESTROY
 
     # make a delete request to '/lists/:id'
-
+    delete '/lists/:id' do 
+      list = List.find(params[:id])
+      list.destroy 
+      redirect '/lists'
+    end
 
 
 
