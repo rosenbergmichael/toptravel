@@ -9,16 +9,12 @@ class UsersController < ApplicationController
     # users should not be able to create an account with any blank credentials
     # users should not be able to create an account with a username that already exists
     user = User.new(params)
-    if user.username.empty? || user.password.empty?
-      @error = "Please fill in both username and password"
-      erb :'users/signup'
-    elsif User.find_by(username: user.username)
-      @error = "Account already exists. Please choose a different username."
-      erb :'users/signup' 
+    if user.save
+        session[:user_id] = user.id
+        redirect '/lists'
     else 
-      user.save
-      session[:user_id] = user.id
-      redirect '/lists'
+      @error = "Invalid credentials"
+      erb :'/users/signup'
     end
   end
 

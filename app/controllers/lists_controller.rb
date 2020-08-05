@@ -1,14 +1,15 @@
 class ListsController < ApplicationController
+
+  before do 
+    require_login
+  end
+
   # CREATE
 
     # New 
     # make a get request to '/lists/new'
     get '/lists/new' do 
-      if logged_in?
-        erb :'/lists/new'
-      else
-        redirect '/login'
-      end 
+      erb :'/lists/new'
     end
 
 
@@ -17,11 +18,10 @@ class ListsController < ApplicationController
     # make a post request to '/lists'
     post '/lists' do 
       list = current_user.lists.build(params)
-      if !list.title.empty? && !list.notes.empty?
-        list.save
+      if list.save
         redirect '/lists'
       else 
-        @error = "Please make sure to enter text into all fields."
+        @error = "Data invalid. Please try again."
         erb :'/lists/new'
       end
     end
@@ -33,24 +33,21 @@ class ListsController < ApplicationController
     # make a get request to '/lists'
   
     get '/lists' do 
-      if logged_in?
-        @lists = List.all.reverse
-        erb :'lists/index' 
-      else
-        redirect '/login'
-      end   
+      @lists = List.all.reverse
+      erb :'lists/index'  
     end
 
     #Show (single lists)
     # make a get request to '/lists/:id'
 
     get '/lists/:id' do 
-      if logged_in?
-        @list = List.find(params[:id])
+      @list = List.find_by(id: params[:id])
+      if @list
         erb :'lists/show'
       else 
-        redirect '/login'
+        redirect '/lists'
       end 
+      
     end
 
 
@@ -60,12 +57,8 @@ class ListsController < ApplicationController
     # Edit
     # make a get request to '/lists/:id/edit'
     get '/lists/:id/edit' do 
-      if logged_in?
-        @list = List.find(params[:id])
-        erb :'/lists/edit'
-      else
-        redirect '/login'
-      end
+      @list = List.find(params[:id])
+      erb :'/lists/edit'
     end
 
 
