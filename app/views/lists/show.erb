@@ -2,5 +2,7 @@
 <h2><%= @list.notes %></h2>
 <form action="/lists/<%= @list.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
-  <button type="submit">Delete List</button>
+  <% if @list.user == current_user %> 
+    <button type="submit">Delete List</button>
+  <% end %>  
 </form>

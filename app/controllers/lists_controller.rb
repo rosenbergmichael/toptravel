@@ -1,11 +1,14 @@
 class ListsController < ApplicationController
-
   # CREATE
 
     # New 
     # make a get request to '/lists/new'
     get '/lists/new' do 
-      erb :'/lists/new'
+      if logged_in?
+        erb :'/lists/new'
+      else
+        redirect '/login'
+      end 
     end
 
 
@@ -13,7 +16,7 @@ class ListsController < ApplicationController
     # Create
     # make a post request to '/lists'
     post '/lists' do 
-      list = List.new(params)
+      list = current_user.lists.build(params)
       if !list.title.empty? && !list.notes.empty?
         list.save
         redirect '/lists'
@@ -30,16 +33,24 @@ class ListsController < ApplicationController
     # make a get request to '/lists'
   
     get '/lists' do 
-      @lists = List.all.reverse
-      erb :'lists/index' 
+      if logged_in?
+        @lists = List.all.reverse
+        erb :'lists/index' 
+      else
+        redirect '/login'
+      end   
     end
 
     #Show (single lists)
     # make a get request to '/lists/:id'
 
     get '/lists/:id' do 
-      @list = List.find(params[:id])
-      erb :'lists/show'
+      if logged_in?
+        @list = List.find(params[:id])
+        erb :'lists/show'
+      else 
+        redirect '/login'
+      end 
     end
 
 
@@ -49,8 +60,12 @@ class ListsController < ApplicationController
     # Edit
     # make a get request to '/lists/:id/edit'
     get '/lists/:id/edit' do 
-      @list = List.find(params[:id])
-      erb :'/lists/edit'
+      if logged_in?
+        @list = List.find(params[:id])
+        erb :'/lists/edit'
+      else
+        redirect '/login'
+      end
     end
 
 

@@ -4,6 +4,7 @@
 <% @lists.each do |list| %>
     <h2><a href="/lists/<%= list.id %>"><%= list.title %></a></h2>
     <p><%= list.notes %></p>
-    <% # If currently logged in user created this list: %> 
-    <a href="/lists/<%= list.id %>/edit">Edit</a>
+    <% if current_user == list.user %>
+        <a href="/lists/<%= list.id %>/edit">Edit</a>
+    <% end %>    
 <% end %>    
