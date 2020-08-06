@@ -11,6 +11,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
+gem "httparty", "~> 0.18.1"
 
 group :test do
   gem 'rspec'

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+  
   # users can log in
   get '/login' do
     erb :'users/login'
@@ -10,7 +11,8 @@ class SessionsController < ApplicationController
       @error = "Please fill in both username and password"
       erb :'users/login'
     else
-      if user = User.find_by(username: params["username"], password: params["password"]) 
+      if user = User.find_by(username: params["username"])
+        user.authenticate(params["password"])
         session[:user_id] = user.id
         redirect '/lists'
       else

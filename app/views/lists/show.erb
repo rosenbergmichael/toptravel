@@ -1,5 +1,16 @@
 <h1><%= @list.title %></h1>
-<h2><%= @list.notes %></h2>
+<h3>Notes</h3>
+<p><%= @list.notes %></p>
+<br>
+<h3>Destinations</h3>
+<%= @list.destinations.map { |destination| destination.name }.join(', ') %>
+<br>
+<br>
+<h3>Images</h3>
+<% @list.destinations.each do |destination| %>
+<img src="<%= destination.image %>" >
+<% end %>
+
 <form action="/lists/<%= @list.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <% if @list.user == current_user %> 

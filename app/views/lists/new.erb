@@ -2,8 +2,21 @@
 <p><%= @error %></p>
 <form action="/lists" method="post">
   <label>Title</label>
-  <input type="text" name="title">
-  <label>Notes</label>
-  <textarea name="notes"></textarea>
+  <input type="text" name="list[title]">
+  <br>
+  <br>
+  <br>
+  <label>Notes </label>
+  <textarea name="list[notes]"></textarea>
+  <br>
+  <br>
+  <br>
+  <label>Add Destination(s) e.g. Country, City, etc. </label>
+  <textarea name="destination[name]"></textarea>
+  <br>
+  <br>
+  <br>
+  <label>Image URL</label>
+  <input type="text" name="destination[image]">
   <button type="submit">Add List</button>
 </form>

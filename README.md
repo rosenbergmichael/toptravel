@@ -18,5 +18,3 @@ Bug reports and pull requests are welcome. For major changes, please open an iss
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
-
-
