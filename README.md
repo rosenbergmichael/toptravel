@@ -18,3 +18,25 @@ Bug reports and pull requests are welcome. For major changes, please open an iss
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
+
+
+### Notes
+<!-- 
+Edit.erb, add Destination(s) and Image URL to Edit form
+
+  <label>Destination(s)</label>
+  <textarea name="destination[name]"><%= @list.destinations.map { |destination| destination.name } %></textarea>
+  <label>Image URL(s)</label>
+  <input type="text" name="destination[image]" value=""> -->
+
+
+
+<!-- Index.erb, add Delete option next to Edit ?
+
+<form action="/lists/<%= @list.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <% if @list.user == current_user %> 
+    <button type="submit">Delete List</button>
+  <% end %>  
+</form> -->
+

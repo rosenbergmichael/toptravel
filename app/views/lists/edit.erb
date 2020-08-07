@@ -1,4 +1,4 @@
-<h1>Edit List for <%= @list.title %></h1>
+<h1>Edit List: <%= @list.title %></h1>
 <p><%= @error %></p>
 <form action="/lists/<%=@list.id%>" method="post">
   <input type="hidden" name="_method" value="patch"
@@ -6,5 +6,8 @@
   <input type="text" name="list[title]" value="<%= @list.title %>">
   <label>Notes</label>
   <textarea name="list[notes]"><%= @list.notes %></textarea>
-  <button type="submit">Edit List</button>
+
+  <button type="submit">Update</button>
 </form>
+
+
