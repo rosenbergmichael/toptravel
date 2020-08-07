@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   
-  # users can log in
   get '/login' do
     erb :'users/login'
   end
@@ -21,8 +20,6 @@ class SessionsController < ApplicationController
       end 
     end       
   end
-
-  # users can log out
 
   get '/logout' do 
     session.clear 

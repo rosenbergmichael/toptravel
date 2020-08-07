@@ -6,19 +6,12 @@ class ListsController < ApplicationController
 
   # CREATE
 
-    # New 
-    # make a get request to '/lists/new'
     get '/lists/new' do 
       erb :'/lists/new'
     end
 
-
-
-    # Create
-    # make a post request to '/lists'
     post '/lists' do 
       list = current_user.lists.build(params["list"])
-      # list.destinations.build(params["destination"])
       if list.save
         redirect '/lists'
       else 
@@ -30,16 +23,10 @@ class ListsController < ApplicationController
 
   # READ
 
-    #Index (all lists)
-    # make a get request to '/lists'
-  
     get '/lists' do 
       @lists = List.all.reverse
       erb :'lists/index'  
     end
-
-    #Show (single lists)
-    # make a get request to '/lists/:id'
 
     get '/lists/:id' do 
       @list = List.find_by(id: params[:id])
@@ -55,16 +42,11 @@ class ListsController < ApplicationController
 
   # UPDATE
 
-    # Edit
-    # make a get request to '/lists/:id/edit'
     get '/lists/:id/edit' do 
       @list = List.find(params[:id])
       erb :'/lists/edit'
     end
 
-
-    # Update
-    # make a patch request to '/lists/:id'
     patch '/lists/:id' do 
       @list = List.find(params[:id])
       if !params["list"]["title"].empty? && !params["list"]["notes"].empty?
@@ -79,7 +61,6 @@ class ListsController < ApplicationController
 
   # DESTROY
 
-    # make a delete request to '/lists/:id'
     delete '/lists/:id' do 
       list = List.find(params[:id])
       list.destroy 

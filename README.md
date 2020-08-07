@@ -1,8 +1,8 @@
 # TopTravel
 
-Welcome to TopTravel- an app designed to help you keep track of your top travel destinations.  Create as many lists as you'd like whether you want to organize destinations by season, occasion, family, romantic, continent, etc.  
+Welcome to TopTravel- a website designed to help you and your family/friends keep track of the top travel destinations that you'd like to visit.  Create as many lists as you'd like whether you want to organize destinations by season, occasion, continent, etc. You can also view all lists created by family or friends, however you are only able to edit the lists that you create. 
 
-Unfortunately times are tough these days and travel may be restricted for many of us, but hopefully sooner than later we are all able to get out and explore all of the amazing countries and cultures around the world once again.
+Unfortunately times are tough these days and travel may be restricted for many of us, but hopefully sooner than later we are all able to get out and explore all of the amazing countries and cultures around the world once again!
 
 
 ## Install Instructions
@@ -21,15 +21,6 @@ Bug reports and pull requests are welcome. For major changes, please open an iss
 
 
 ### Notes
-<!-- 
-Edit.erb, add Destination(s) and Image URL to Edit form
-
-  <label>Destination(s)</label>
-  <textarea name="destination[name]"><%= @list.destinations.map { |destination| destination.name } %></textarea>
-  <label>Image URL(s)</label>
-  <input type="text" name="destination[image]" value=""> -->
-
-
 
 <!-- Index.erb, add Delete option next to Edit ?
 
