@@ -3,13 +3,12 @@
 <p><%= @list.notes %></p>
 <br>
 <h3>Destinations</h3>
-<%= @list.destinations.map { |destination| destination.name }.join(', ') %>
+<%= @list.destination %>
 <br>
 <br>
 <h3>Images</h3>
-<% @list.destinations.each do |destination| %>
-<img src="<%= destination.image %>" >
-<% end %>
+<img src="<%= @list.image %>" >
+
 
 <form action="/lists/<%= @list.id %>" method="post">
   <input type="hidden" name="_method" value="delete">

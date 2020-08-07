@@ -3,13 +3,14 @@
 <a href="/lists/new">Create a List</a>
 <% @lists.each do |list| %>
     <h2><a href="/lists/<%= list.id %>"><%= list.title %></a></h2>
-    <p>Notes: <%= list.notes %></p>
+    <h4>Notes: <%= list.notes %></h4>
     <div>
-    <p>Destinations: <%= list.destinations.map { |destination| destination.name }.join(', ') %></p>
+    <h4>Destinations: <%= list.destination %></h4>
     </div>
     <% if current_user == list.user %>
         <a href="/lists/<%= list.id %>/edit">Edit</a>
     <% end %>   
+    
 <% end %>    
 
 

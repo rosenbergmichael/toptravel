@@ -18,7 +18,7 @@ class ListsController < ApplicationController
     # make a post request to '/lists'
     post '/lists' do 
       list = current_user.lists.build(params["list"])
-      list.destinations.build(params["destination"])
+      # list.destinations.build(params["destination"])
       if list.save
         redirect '/lists'
       else 
