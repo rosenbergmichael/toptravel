@@ -16,3 +16,7 @@
     <button type="submit">Delete List</button>
   <% end %>  
 </form>
+<br>
+<% if @list.user %>
+  <i>List Created by <%= @list.user.username %></i>
+  <% end %>

@@ -15,6 +15,13 @@ class UsersController < ApplicationController
     end
   end
 
+  get '/mylists' do 
+    @lists = current_user.lists.reverse
+    erb :'/users/mylists'
+  end
+
+
+
   # users can delete account
 
 
