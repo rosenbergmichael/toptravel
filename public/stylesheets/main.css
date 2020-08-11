@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  background-color: whitesmoke;
+  position: fixed;
+  width: 100%; }
+  .header .title {
+    color: white;
+    background-color: #17cc78;
+    margin: 6px;
+    padding: 1px; }
+    .header .title h1 {
+      margin: 3px; }
+  .header .menu {
+    display: flex;
+    margin: 0 5px 0 auto; }
+    .header .menu div {
+      padding: 10px;
+      background-color: #9ce6e9;
+      margin: 10px;
+      border-radius: 6px; }
+      .header .menu div:hover {
+        cursor: pointer;
+        background-color: lightgray;
+        transition: 0.3s ease; }
+
+a {
+  text-decoration: none;
+  color: #4d29ee; }
+
+/*# sourceMappingURL=main.css.map */

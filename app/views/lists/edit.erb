@@ -4,14 +4,26 @@
   <input type="hidden" name="_method" value="patch"
   <label>Title</label>
   <input type="text" name="list[title]" value="<%= @list.title %>">
+  <br>
+  <br>
+  <br>
   <label>Notes</label>
   <textarea name="list[notes]"><%= @list.notes %></textarea>
+  <br>
+  <br>
+  <br>
   <label>Destination</label>
   <textarea name="list[destination]"><%= @list.destination %></textarea>
+  <br>
+  <br>
+  <br>
   <label>Image URL</label>
   <textarea name="list[image]"><%= @list.image %></textarea>
-
-  <button type="submit">Update</button>
+  <br>  
+  <br>
+  <div><button type="submit">Update</button></div>
+  <br>
+  <a href="/lists">Cancel</a>
 </form>
 
 

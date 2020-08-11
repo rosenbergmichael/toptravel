@@ -1,6 +1,7 @@
-
 <h1>Travel Lists</h1>
 <a href="/lists/new">Create a List</a>
+<br>
+<br>
 <% @lists.each do |list| %>
     <h2><a href="/lists/<%= list.id %>"><%= list.title %></a></h2>
     <h4>Notes: <%= list.notes %></h4>
@@ -8,7 +9,6 @@
     <h4>Destinations: <%= list.destination %></h4>
     </div>
     <div>
-    <h4>Images</h4>
     <img src="<%= list.image %>" >
     </div>
     <% if current_user == list.user %>

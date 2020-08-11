@@ -19,15 +19,4 @@ Bug reports and pull requests are welcome. For major changes, please open an iss
 
 [MIT](https://opensource.org/licenses/MIT)
 
- 
-<!--  ### Notes -->
-
-<!-- Index.erb, add Delete option next to Edit ?
-
-<form action="/lists/<%= @list.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <% if @list.user == current_user %> 
-    <button type="submit">Delete List</button>
-  <% end %>  
-</form> -->
 

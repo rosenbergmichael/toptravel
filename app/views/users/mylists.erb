@@ -1,3 +1,4 @@
+<div>
 <h1>My Travel Lists</h1>
 <div><i>Here are the lists you have created:</i></div>
 
@@ -8,7 +9,6 @@
     <h4>Destinations: <%= list.destination %></h4>
     </div>
     <div>
-    <h4>Images</h4>
     <img src="<%= list.image %>" >
     </div>
     <% if current_user == list.user %>
@@ -20,3 +20,4 @@
 <br>
 <br>
 <p><a href="/lists/new">Create a List</a></p>
+</div>

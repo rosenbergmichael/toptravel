@@ -12,6 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 gem "httparty", "~> 0.18.1"
+gem 'sass'
 
 group :test do
   gem 'rspec'

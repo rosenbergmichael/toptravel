@@ -14,19 +14,19 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div>
-      <div><a href="/">Home</a></div>
-    <% if logged_in? %>
-      
-      <div><a href="/lists">Lists</a></div>
-      <div><a href="/mylists">My Lists</a></div>
-      <div><a href="/logout">Log Out</a></div>
-    <% else %>
-      
-      <div><a href="/signup">Sign Up</a></div>
-      <div><a href="/login">Log In</a></div>
-    <% end %>
-    
+    <div class="header">
+      <div class="title"><h1>TopTravel</h1></div>
+      <div class="menu">
+        <div><a href="/">Home</a></div>
+        <% if logged_in? %>
+          <div><a href="/lists">Lists</a></div>
+          <div><a href="/mylists">My Lists</a></div>
+          <div><a href="/logout">Log Out</a></div>
+        <% else %>
+          <div><a href="/signup">Sign Up</a></div>
+          <div><a href="/login">Log In</a></div>
+        <% end %>
+      </div>
     </div>
     <div class="wrapper">
 
