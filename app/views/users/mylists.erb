@@ -1,23 +1,26 @@
-<div>
+<div class="lists-container">
 <h1>My Travel Lists</h1>
-<div><i>Here are the lists you have created:</i></div>
-
-<% @lists.each do |list| %>
-    <h2><a href="/lists/<%= list.id %>"><%= list.title %></a></h2>
-    <h4>Notes: <%= list.notes %></h4>
-    <div>
-    <h4>Destinations: <%= list.destination %></h4>
-    </div>
-    <div>
-    <img src="<%= list.image %>" >
-    </div>
-    <% if current_user == list.user %>
-        <a href="/lists/<%= list.id %>/edit">Edit</a>
-    <% end %>   
-    
-<% end %>  
-<br>
-<br>
-<br>
 <p><a href="/lists/new">Create a List</a></p>
+<div><i>Here are the lists you have created:</i></div>
+<div class="list-cards">
+    <% @lists.each do |list| %>
+        <div class="list-card">
+        <h2><a href="/lists/<%= list.id %>"><%= list.title %></a></h2>
+        <h4>Notes: <%= list.notes %></h4>
+        <div>
+        <h4>Destinations: <%= list.destination %></h4>
+        </div>
+        <div>
+        <img src="<%= list.image %>" >
+        </div>
+        <% if current_user == list.user %>
+            <a href="/lists/<%= list.id %>/edit">Edit</a>
+        <% end %>   
+    </div>
+<% end %>  
+</div>
+<br>
+<br>
+<br>
+
 </div>

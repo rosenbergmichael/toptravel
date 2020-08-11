@@ -1,8 +1,11 @@
+$container: rgb(245, 238, 238);
+
 .header {
   display: flex;
   background-color: whitesmoke;
   position: fixed;
   width: 100%;
+  opacity: 0.95;
 
   .title {
     color: white;
@@ -34,7 +37,46 @@
   }
 }
 
+.wrapper {
+  padding: 58px 5px;
+
+  .lists-container {
+
+      .list-cards {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-column-gap: 5%;
+        grid-row-gap: 20px;
+        background-color: whitesmoke;
+
+        .list-card {
+          box-shadow: 5px 2px rgb(237, 236, 236);
+          padding: 20px;
+          border-radius: 5px;
+          background-color: white;
+          img {
+            width: 100%;
+          }
+          &:hover {
+            background-color: lightgray;
+            color: whitesmoke;
+            cursor: pointer; 
+            transition: 0.3s ease;
+          }
+          
+        }
+      }
+
+  }
+}
+
 a {
   text-decoration: none;
   color: rgb(77, 41, 238);
+}
+
+body {
+  padding: 0;
+  margin: 0;
 }

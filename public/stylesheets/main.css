@@ -2,7 +2,8 @@
   display: flex;
   background-color: whitesmoke;
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  opacity: 0.95; }
   .header .title {
     color: white;
     background-color: #17cc78;
@@ -23,8 +24,34 @@
         background-color: lightgray;
         transition: 0.3s ease; }
 
+.wrapper {
+  padding: 58px 5px; }
+  .wrapper .lists-container .list-cards {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 5%;
+    grid-row-gap: 20px;
+    background-color: whitesmoke; }
+    .wrapper .lists-container .list-cards .list-card {
+      box-shadow: 5px 2px #edecec;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white; }
+      .wrapper .lists-container .list-cards .list-card img {
+        width: 100%; }
+      .wrapper .lists-container .list-cards .list-card:hover {
+        background-color: lightgray;
+        color: whitesmoke;
+        cursor: pointer;
+        transition: 0.3s ease; }
+
 a {
   text-decoration: none;
   color: #4d29ee; }
+
+body {
+  padding: 0;
+  margin: 0; }
 
 /*# sourceMappingURL=main.css.map */
