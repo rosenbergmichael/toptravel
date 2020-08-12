@@ -42,7 +42,7 @@
         width: 100%; }
       .wrapper .lists-container .list-cards .list-card:hover {
         background-color: lightgray;
-        color: whitesmoke;
+        color: black;
         cursor: pointer;
         transition: 0.3s ease; }
 
