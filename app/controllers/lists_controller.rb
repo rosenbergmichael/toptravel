@@ -4,51 +4,41 @@ class ListsController < ApplicationController
     require_login
   end
 
-  # CREATE
+  get '/lists/new' do 
+    erb :'/lists/new'
+  end
 
-    get '/lists/new' do 
-      erb :'/lists/new'
-    end
-
-    post '/lists' do 
-      list = current_user.lists.build(params["list"])
+  post '/lists' do 
+    list = current_user.lists.build(params["list"])
       if list.save
         redirect '/lists'
       else 
         @error = "Data invalid. Please try again."
         erb :'/lists/new'
       end
-    end
+  end 
 
+  get '/lists' do 
+    @lists = List.all.reverse
+    erb :'lists/index'  
+  end
 
-  # READ
-
-    get '/lists' do 
-      @lists = List.all.reverse
-      erb :'lists/index'  
-    end
-
-    get '/lists/:id' do 
-      @list = List.find_by(id: params[:id])
+  get '/lists/:id' do 
+    @list = List.find_by(id: params[:id])
       if @list
         erb :'lists/show'
       else 
         redirect '/lists'
-      end 
-      
-    end
+      end   
+  end
 
+  get '/lists/:id/edit' do 
+    @list = List.find(params[:id])
+    erb :'/lists/edit'
+  end
 
-
-  # UPDATE
-
-    get '/lists/:id/edit' do 
-      @list = List.find(params[:id])
-      erb :'/lists/edit'
-    end
-
-    patch '/lists/:id' do 
-      @list = List.find(params[:id])
+  patch '/lists/:id' do 
+    @list = List.find(params[:id])
       if !params["list"]["title"].empty? && !params["list"]["notes"].empty?
         @list.update(params["list"]) 
         redirect "/lists/#{params[:id]}"
@@ -56,17 +46,12 @@ class ListsController < ApplicationController
         @error = "Please make sure to enter text into all fields."
         erb :'/lists/edit'
       end 
-    end
+  end
 
-
-  # DESTROY
-
-    delete '/lists/:id' do 
-      list = List.find(params[:id])
-      list.destroy 
-      redirect '/lists'
-    end
-
-
+  delete '/lists/:id' do 
+    list = List.find(params[:id])
+    list.destroy 
+    redirect '/lists'
+  end
 
 end
