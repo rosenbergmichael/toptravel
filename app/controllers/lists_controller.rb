@@ -34,13 +34,17 @@ class ListsController < ApplicationController
 
   get '/lists/:id/edit' do 
     @list = List.find(params[:id])
-    erb :'/lists/edit'
+    if @list.user == current_user
+      erb :'/lists/edit' 
+    else
+      redirect '/lists'
+    end
   end
 
   patch '/lists/:id' do 
     @list = List.find(params[:id])
       if !params["list"]["title"].empty? && !params["list"]["notes"].empty?
-        @list.update(params["list"]) 
+        @list.update(params["list"]) if @list.user == current_user
         redirect "/lists/#{params[:id]}"
       else 
         @error = "Please make sure to enter text into all fields."
@@ -49,9 +53,10 @@ class ListsController < ApplicationController
   end
 
   delete '/lists/:id' do 
-    list = List.find(params[:id])
-    list.destroy 
+    @list = List.find(params[:id])
+    @list.destroy if @list.user == current_user
     redirect '/lists'
   end
 
 end
+
