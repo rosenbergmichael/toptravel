@@ -11,7 +11,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
-gem "httparty", "~> 0.18.1"
+gem "httparty", "~> 0.21.0"
 gem 'sass'
 
 group :test do
